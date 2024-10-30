@@ -3,8 +3,8 @@ import NavBar from "./components/navbar";
 export default function Home() {
   return (
     <>
-    <NavBar></NavBar>
-    <HeroSection></HeroSection>
+      <NavBar></NavBar>
+      <HeroSection></HeroSection>
     </>
   );
 }
