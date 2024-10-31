@@ -6,6 +6,7 @@ export default function Home() {
     <>
       <NavBar></NavBar>
       <HeroSection></HeroSection>
+      <Footer></Footer>
     </>
   );
 }
