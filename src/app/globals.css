@@ -5,6 +5,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-primary: #fca311;  
+  --color-secondary: #8ecae6;
+  --color-text: #e5e5e5;  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +27,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.text-headings {
+  color: var(--color-secondary)
 }
