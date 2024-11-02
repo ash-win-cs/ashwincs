@@ -1,5 +1,22 @@
 import React from "react";
 import Image from "next/image";
+import { socialHandles } from "./../models/skillsModel";
+import * as Icons from "react-icons/fa";
+
+const socials: Array<socialHandles> = [
+  { id: 1, socialName: "FaGithub", socialUrl: "https://github.com/ash-win-cs" },
+  { id: 2, socialName: "FaEnvelope", socialUrl: "mailto:ashwincsuresh@outlook.com" },
+  { id: 3, socialName: "FaLinkedin", socialUrl: "https://www.linkedin.com/in/ashwin-c-s/" },
+  { id: 4, socialName: "FaWhatsapp", socialUrl: `https://wa.me/+917559055760?text=${encodeURIComponent("Hi, I would like to connect with you!")}` }
+];
+
+const DynamicFaIcon = ({ fname }) => {
+  const IconComponent = Icons[fname];
+  if (!IconComponent) {
+    return <Icons.FaBeer size={30} />;
+  }
+  return <IconComponent size={30} />;
+};
 
 const HeroSection = () => {
   return (
@@ -16,12 +33,21 @@ const HeroSection = () => {
         </div>
         <div className="p-5 content-center sm:order-1">
           <span className="text-5xl font-bold line-clamp-2 sm:line-clamp-2 ">
-            Hi, I&apos;m <span className="text-blue-400 text-nowrap">Ashwin C S</span>
+            Hi, I&apos;m{" "}
+            <span className="text-blue-400 text-nowrap">Ashwin C S</span>
           </span>
           <p className="mt-2">
-            Software Engineer crafting seamless experiences with Angular, React,
-            and .NET. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          I’m a Software Engineer with a passion for creating meaningful solutions. Right now at <strong>GE HealthCare</strong>, I work with Angular, Ionic, and TypeScript to develop mobile applications for clinical usage. I love tackling problems from a broader perspective. To me, software engineering isn’t just about coding; it’s about understanding the entire journey, from development and testing to DevOps.
           </p>
+          <div className="flex flex-row  max-w-xl mx-auto justify-between md:justify-start">
+            {socials.map(({ id, socialName, socialUrl }) => (
+              <div key={id} className="m-5 ml-0 flex items-center ">
+                <a href={socialUrl} target="_blank" rel="noopener noreferrer">
+                  <DynamicFaIcon fname={socialName} />
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
