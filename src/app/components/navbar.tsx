@@ -8,9 +8,8 @@ const NavBar = () => {
   const pathname = usePathname();
   const pages = [
     { id: 1, page: "Home", path: "/" },
-    { id: 2, page: "Skills", path: "/skills" },
+    { id: 2, page: "About", path: "/about" },
     { id: 3, page: "Blogs", path: "/blogs" },
-    { id: 4, page: "About", path: "/about" },
   ];
   const [nav, setNav] = useState(false);
   
@@ -23,13 +22,13 @@ const NavBar = () => {
   return (
     <>
       <nav className="hidden md:block">
-        <div className="flex items-center m-2 h-20 fixed justify-center w-screen">
+        <div className="flex items-center m-2 h-16 fixed justify-center w-screen">
           <ul className="flex flex-row justify-between py-2 px-1 border border-gray-700 backdrop-blur rounded-xl sticky text-sm text-gray-300">
             {pages.map(({ id, page, path }) => (
               <li key={id} className="py-1">
                 <Link
                   href={path}
-                  className={`p-2 m-0.5 rounded-lg hover:text-gray-800 hover:bg-stone-300 transition-colors ${activePage?.page === page ? 'bg-stone-300 text-gray-800' : 'bg-transparent'}`}
+                  className={`p-2 m-0.5 rounded-lg hover:text-gray-800 hover:bg-stone-300 transition-colors ${activePage?.page === page ? 'bg-zinc-500 ' : 'bg-transparent'}`}
                 >
                   {page}
                 </Link>
