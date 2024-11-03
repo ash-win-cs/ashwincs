@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { socialHandles } from "./../models/skillsModel";
+import { socialHandles, DynamicFaIconProps } from "./../models/skillsModel";
 import * as Icons from "react-icons/fa";
 
 const socials: Array<socialHandles> = [
@@ -28,8 +28,8 @@ const socials: Array<socialHandles> = [
   },
 ];
 
-const DynamicFaIcon = ({ fname }) => {
-  const IconComponent = Icons[fname];
+const DynamicFaIcon: React.FC<DynamicFaIconProps> = ({ iconName }) => {
+  const IconComponent = Icons[iconName];
   if (!IconComponent) {
     return <Icons.FaBeer size={30} />;
   }
@@ -54,7 +54,7 @@ const HeroSection = () => {
             Hi, I&apos;m{" "}
             <span className="text-blue-400 text-nowrap">Ashwin C S</span>
           </span>
-          <p className="mt-2">
+          <p className="mt-2 text-justify">
             I’m a Software Engineer with a passion for creating meaningful
             solutions. Right now at <strong>GE HealthCare</strong>, I work with
             Angular, Ionic, and TypeScript to develop mobile applications for
@@ -67,7 +67,7 @@ const HeroSection = () => {
             {socials.map(({ id, socialIconName, socialUrl }) => (
               <div key={id} className="m-5 ml-0 flex items-center ">
                 <a href={socialUrl} target="_blank" rel="noopener noreferrer">
-                  <DynamicFaIcon fname={socialIconName} />
+                  <DynamicFaIcon iconName={socialIconName} />
                 </a>
               </div>
             ))}

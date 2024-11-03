@@ -7,6 +7,12 @@ export type skillsModel = {
 
 export type socialHandles = {
     id: number;
-    socialIconName: string;
+    socialIconName: IconName;
     socialUrl: string;
 };
+
+type IconName = "FaWhatsapp" | "FaGithub" | "FaEnvelope" | "FaLinkedin";
+
+export interface DynamicFaIconProps {
+  iconName: IconName;
+}
