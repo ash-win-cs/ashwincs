@@ -9,7 +9,7 @@ const NavBar = () => {
   const pages = [
     { id: 1, page: "Home", path: "/" },
     { id: 2, page: "About", path: "/about" },
-    { id: 3, page: "Blogs", path: "/blogs" },
+    { id: 3, page: "Projects", path: "/projects" },
   ];
   const [nav, setNav] = useState(false);
   

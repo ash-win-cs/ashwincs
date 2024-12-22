@@ -11,7 +11,7 @@ export type socialHandles = {
     socialUrl: string;
 };
 
-type IconName = "FaWhatsapp" | "FaGithub" | "FaEnvelope" | "FaLinkedin";
+type IconName = "FaWhatsapp" | "FaGithub" | "FaEnvelope" | "FaLinkedin" | "FaDownload";
 
 export interface DynamicFaIconProps {
   iconName: IconName;

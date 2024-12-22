@@ -26,6 +26,11 @@ const socials: Array<socialHandles> = [
       "Hi, I would like to connect with you!"
     )}`,
   },
+  {
+    id: 5,
+    socialIconName: "FaDownload",
+    socialUrl:"/resume.pdf",
+  },
 ];
 
 const DynamicFaIcon: React.FC<DynamicFaIconProps> = ({ iconName }) => {
